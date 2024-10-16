@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="../../assets/lib/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/lib/slick/slick-theme.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Styles améliorés */
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+
+        .navbar-nav .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #e2e6ea;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #e2e6ea;
+            color: #007bff;
+        }
+
+        .navbar-nav .nav-link i {
+            transition: transform 0.3s;
+        }
+
+        .fa-chevron-up {
+            transform: rotate(180deg);
+        }
+
+        .subcategories-list, .marques-list {
+            list-style: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .navbar-nav .nav-item.open > .nav-link i {
+            transform: rotate(180deg);
+        }
+
+        .navbar-nav .nav-item.open > .subcategories-list,
+        .navbar-nav .nav-item.open > .subcategories-list .nav-item.open > .marques-list {
+            display: block;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            padding: 1rem;
+        }
+
+        .nav-item {
+            list-style: none;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: #e2e6ea;
+            border-radius: 4px;
+        }
+
+        .nav-link i {
+            margin-left: auto;
+            transition: transform 0.3s;
+        }
+
+        .fa-chevron-up {
+            transform: rotate(180deg);
+        }
+
+        .subcategories-list {
+            list-style: none;
+            padding-left: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .subcategories-list .nav-item {
+            padding: 0.2rem 0;
+        }
+
+        .subcategories-list .nav-link {
+            color: #555;
+            transition: background-color 0.3s ease;
+        }
+
+        .subcategories-list .nav-link:hover {
+            background-color: #d1d1d1;
+        }
+
+        body {
+            color: #353535;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            background: #f3f6ff;
+        }
+
+        h1, h2 {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 700;
+        }
+
+        @media (min-width: 992px) {
+            .container-fluid {
+                padding-right: 60px;
+                padding-left: 60px;
+            }
+        }
+
+        .flex-container {
+            display: flex;
+        }
+
+        .flex-container .sidebar {
+            width: 25%;
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        .flex-container .content {
+            width: 75%;
+            padding: 10px;
+        }
+
+        .card-deck {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            flex: 1 1 calc(33.333% - 1rem);
+            margin: 0.5rem;
+            min-width: 200px; /* Largeur minimale des cartes */
+            max-width: 300px; /* Largeur maximale des cartes */
+            height: auto; /* Hauteur automatique pour ajuster en fonction du contenu */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Masque le débordement du contenu */
+        }
+
+        .card-img-top {
+            width: 100%; /* Largeur fixe de l'image */
+            height: 150px; /* Hauteur fixe de l'image */
+            object-fit: cover; /* Recadre l'image pour qu'elle remplisse le conteneur */
+            object-position: center; /* Centre l'image dans le conteneur */
+        }
+
+        .card-body {
+            flex-grow: 1; /* Permet au contenu du corps de la carte de s'étendre */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Espace entre les éléments */
+        }
+
+        .card-footer {
+            text-align: center;
+            padding: 0.5rem 0; /* Ajustement de l'espacement */
+        }
+
+        .card-text {
+            margin: 0; /* Réduction de la marge pour compacter le texte */
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div class="sidebar">
+            <nav class="navbar bg-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item" *ngFor="let category of categories" [ngClass]="{'open': expandedCategoryId === category.id}">
+                        <a class="nav-link" href="javascript:void(0)" (click)="toggleSubcategories(category.id)">
+                            {{ category.Nom }}
+                            <i class="fa" [ngClass]="{'fa-chevron-down': expandedCategoryId !== category.id, 'fa-chevron-up': expandedCategoryId === category.id}"></i>
+                        </a>
+                        <ul *ngIf="expandedCategoryId === category.id" class="subcategories-list">
+                            <li *ngFor="let subCategory of category.sousCategories" class="nav-item" [ngClass]="{'open': expandedSubCategoryId === subCategory.id}">
+                                <a class="nav-link" href="javascript:void(0)" (click)="toggleMarques(subCategory.id)">
+                                    {{ subCategory.Nom }}
+                                    <i class="fa" [ngClass]="{'fa-chevron-down': expandedSubCategoryId !== subCategory.id, 'fa-chevron-up': expandedSubCategoryId === subCategory.id}"></i>
+                                </a>
+                                <ul *ngIf="expandedSubCategoryId === subCategory.id" class="marques-list">
+                                    <li *ngFor="let marque of marques[subCategory.id]" class="nav-item">
+                                        <a class="nav-link" href="javascript:void(0)" (click)="toggleArticles(marque.id)">
+                                            {{ marque.Nom }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div *ngIf="expandedMarqueId" class="articles-list">
+                <div class="card-deck">
+                    <div class="card" *ngFor="let article of articles[expandedMarqueId]" (click)="viewArticleDetail(article.id)">
+                        <img [src]="article.ImageUrl" class="card-img-top" alt="{{ article.Nom }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.Nom }}</h5>
+                            <p class="card-text">Référence: {{ article.Reference }}</p>
+                            <p class="card-text">Prix: {{ article.Prix }} DT</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Magasin: {{ getMagasinName(article.ResponsableId) }}</small>
+                          </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- Angular -->
+    <script>
+        // Your Angular logic to handle clicks and toggles
+    </script>
+</body>
+</html>

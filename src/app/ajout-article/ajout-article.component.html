@@ -1,0 +1,85 @@
+<div mat-dialog-title>
+  <h1>Ajout d'un article</h1>
+</div>
+<form [formGroup]="articleForm" (ngSubmit)="onFormSubmit()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Nom</mat-label>
+          <input matInput placeholder="Nom" formControlName="Nom">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Reference</mat-label>
+          <input matInput placeholder="Reference" formControlName="Reference">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Catégorie</mat-label>
+          <mat-select formControlName="Categorie">
+            <mat-option *ngFor="let categorie of categories" [value]="categorie.id">
+              {{categorie.Nom}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Sous Catégorie</mat-label>
+          <mat-select formControlName="SousCategorie">
+            <mat-option *ngFor="let sousCategorie of filteredSousCategories" [value]="sousCategorie.id">
+              {{sousCategorie.Nom}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Marque</mat-label>
+          <mat-select formControlName="Marque">
+            <mat-option *ngFor="let marque of filteredMarques" [value]="marque.id">
+              {{marque.Nom}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Prix</mat-label>
+          <input matInput placeholder="Prix" formControlName="Prix">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Lien</mat-label>
+          <input matInput placeholder="Lien" formControlName="Lien">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 form-group">
+        <label>Image</label>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="customFile" accept="image/*" (change)="previewImage($event)">
+          <label class="custom-file-label" for="customFile">Choisir une image</label>
+        </div>
+        <div class="image-container" *ngIf="imageUrl">
+          <img [src]="imageUrl" alt="Image Preview" class="preview-image" style="width: 80px; height: auto; margin-right: 10px;">
+        </div>
+      </div>
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button color="primary" type="submit">{{ data ? 'Modifier' : 'Sauvegarder' }}</button>
+      <button mat-raised-button type="button" [mat-dialog-close]="false">Annuler</button>
+    </div>
+  </div>
+</form>

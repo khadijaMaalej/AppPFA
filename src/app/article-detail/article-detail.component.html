@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .similar-article {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            background-color: #fff;
+            margin-bottom: 10px;
+        }
+        .similar-article img {
+            width: 100px;
+            height: auto;
+        }
+        .similar-article-details {
+            flex: 1;
+            margin-left: 15px;
+        }
+        .similar-article-price {
+            margin-right: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff5733;
+        }
+        .btn-offer {
+            background-color: #ff5733;
+            color: white;
+        }
+        .btn-offer:hover {
+            background-color: #cc4600;
+        }
+    </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="nav">
+      <div class="container-fluid">
+          <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+              <a href="#" class="navbar-brand">MENU</a>
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                  <div class="navbar-nav mr-auto">
+                      <a routerLink="/homeclient" class="nav-item nav-link active">Home</a>
+                      <a routerLink="/" fragment="partenaire-section" class="nav-item nav-link">Nos partenaires</a>
+                      <a routerLink="/" fragment="detail-section" class="nav-item nav-link">Detail</a>
+                      <a routerLink="/" fragment="contact-section" class="nav-item nav-link">Contact</a>
+                     
+                  </div>
+                  <div class="navbar-nav ml-auto">
+                      <a routerLink="/login" fragment="contact-section" class="nav-item nav-link">Connecter</a>
+                  </div>
+              </div>
+          </nav>
+      </div>
+  </div>
+  <!-- Navbar End -->
+
+  <!-- Bottom Bar Start -->
+  <div class="bottom-bar">
+      <div class="container-fluid">
+          <div class="row align-items-center">
+              <div class="col-md-3">
+                  <div class="logo d-flex align-items-center">
+                      <a href="index.html" class="d-flex align-items-center">
+                          <img src="../../assets/img/logo.png" alt="Logo" class="logo-img">
+                          <h1 class="m-0 display-5 font-weight-semi-bold ml-3">
+                              <span class="text-orange font-weight-bold mr-1">E</span>asy
+                              <span class="text-orange font-weight-bold mr-1">B</span>uy
+                          </h1>
+                      </a>
+                  </div>
+              </div>
+              
+              <div class="col-md-6">
+                  <div class="search">
+                      <input type="text" placeholder="Search">
+                      <button><i class="fa fa-search"></i></button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="container mt-5">
+        <div class="card mb-4">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img [src]="article.ImageUrl" class="card-img" alt="{{ article.Nom }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ article.Nom }}</h2>
+                        <p class="card-text"><strong>Référence:</strong> {{ article.Reference }}</p>
+                        <p class="card-text"><strong>Prix:</strong> {{ article.Prix }} DT</p>
+                        <p class="card-text"><strong>Responsable:</strong> {{ getMagasinName(article.ResponsableId) }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="relatedArticles.length > 0" class="mt-4">
+            <h3>Articles similaires</h3>
+            <div class="similar-articles">
+                <div class="similar-article" *ngFor="let relatedArticle of relatedArticles">
+                    <img [src]="relatedArticle.ImageUrl" alt="{{ relatedArticle.Nom }}">
+                    <div class="similar-article-details">
+                        <h5>{{ relatedArticle.Nom }}</h5>
+                        <p>Référence: {{ relatedArticle.Reference }}</p>
+                        <small class="text-muted">Magasin: {{ getMagasinName(relatedArticle.ResponsableId) }}</small>
+                    </div>
+                    <div class="similar-article-price">{{ relatedArticle.Prix }} DT</div>
+                    <a [href]="relatedArticle.Lien" target="_blank" class="btn btn-danger btn-offer">Voir l'offre</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-categorie-client></app-categorie-client>
+    <app-footer-client></app-footer-client>
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

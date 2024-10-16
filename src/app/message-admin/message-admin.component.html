@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <app-navbar></app-navbar>
+  <div class="content-wrapper">
+    <div class="main-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4">
+            <div class="list-group">
+              <a
+                *ngFor="let conversation of conversations"
+                class="list-group-item list-group-item-action"
+                [class.active]="selectedConversationId === conversation.id"
+                (click)="selectConversation(conversation.id)"
+              >
+                {{ conversation.responsableName }}
+              </a>
+            </div>
+          </div>
+          <div class="col-8">
+            <div *ngIf="selectedConversationId" class="chat-container">
+              <h3>{{ getResponsableName(selectedConversationId) }}</h3>
+              <div class="messages" #messagesContainer>
+                <div *ngFor="let message of messages" [ngClass]="{'my-message': message.senderId === adminId, 'responsable-message': message.senderId !== adminId}">
+                  {{ message.content }}
+                </div>
+              </div>
+              <div class="message-input">
+                <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+                  <input formControlName="content" placeholder="Type your message here..." class="form-control">
+                  <button type="submit" [disabled]="!messageForm.valid" class="btn btn-primary mt-2">Send</button>
+                </form>
+              </div>
+            </div>
+            <div *ngIf="!selectedConversationId">
+              <p>Select a conversation to start messaging.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,10 @@
+.vendor-carousel .vendor-item {
+  display: inline-block;
+  width: auto;
+}
+.vendor-carousel .vendor-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}

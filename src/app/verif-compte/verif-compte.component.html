@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@angular/material@12.0.0/prebuilt-themes/indigo-pink.css">
+  </head>
+  <body>
+    <app-navbar></app-navbar>
+    <div class="content-wrapper">
+      <div class="container">
+        <div *ngFor="let user of users" class="user-card">
+          <mat-card>
+            <mat-card-content>
+              <p>{{ user.email }}</p>
+              <p>{{ user.nom }} {{ user.prenom }}</p>
+              <p>{{ user.magasin }}</p>
+              <div class="button-group">
+                <button mat-raised-button color="primary" (click)="updateUserStatus(user.id, 'approved', user.email)">Accepter</button>
+                <button mat-raised-button color="warn" (click)="updateUserStatus(user.id, 'rejected', user.email)">Refuser</button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </body>
+  <app-footer></app-footer>
+</html>

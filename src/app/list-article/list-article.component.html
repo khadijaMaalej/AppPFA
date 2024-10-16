@@ -1,0 +1,138 @@
+<app-header-responsable></app-header-responsable>
+<div class="container-fluid mb-5">
+  <div class="" >
+      
+      <div class="col-lg-9" class="text-center mb-4" >
+          <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+              <a href="" class="text-decoration-none d-block d-lg-none">
+                  <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold  mr-1">E</span>asy<span class="text-primary font-weight-bold  mr-1">B</span>uy</h1>
+              </a>
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav mr-auto py-0">
+                  <a href="index.html" class="nav-item nav-link active">Home</a>
+                  <a href="shop.html" class="nav-item nav-link"></a>
+                  <a routerLink="/listarticle" fragment="cat-section" class="nav-item nav-link">Catégories</a>
+                  <a routerLink="/listarticle" fragment="marque-section" class="nav-item nav-link">Marques</a>
+                  <a routerLink="/listarticle" fragment="article-section" class="nav-item nav-link">Articles</a>
+                </div>
+                <div class="navbar-nav ml-auto py-0">
+                  <a href="/homeclient" class="nav-link" (click)="logout()">Déconnecter</a>
+                </div>
+              </div>
+              
+          </nav>
+          <div id="header-carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active" style="height: 410px;">
+                      <img class="img-fluid" src="../../assets/client/img/carousel-1.jpg" alt="Image">
+                      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                          
+                      </div>
+                  </div>
+                  <div class="carousel-item" style="height: 410px;">
+                      <img class="img-fluid" src="../../assets/client/img/carousel-2.jpg" alt="Image">
+                      <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                          <div class="p-3" style="max-width: 700px;">
+                              <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                  <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                      <span class="carousel-control-prev-icon mb-n2"></span>
+                  </div>
+              </a>
+              <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                  <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                      <span class="carousel-control-next-icon mb-n2"></span>
+                  </div>
+              </a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Featured Start -->
+
+<!-- Featured End -->
+
+<!-- Categories Start -->
+
+<!-- Categories End -->
+
+
+<!-- Offer Start -->
+<div class="container-fluid offer pt-5">
+  <div class="row px-xl-5">
+      <div class="col-md-6 pb-4">
+         
+      </div>
+      <div class="col-md-6 pb-4">
+         
+      </div>
+  </div>
+</div>
+<!-- Offer End -->
+
+
+<!-- Products Start -->
+ <div id="article-section">
+<div class="container-fluid pt-5">
+  <div class="text-center mb-4">
+      <h2 class="section-title px-5"><span class="px-2">Mes articles</span></h2>
+  </div>
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <button mat-raised-button color="primary" class="float-right" (click)="openAddEditArticleForm()">
+        Ajouter un article
+      </button>
+    </div>
+  </div>
+</div>
+<div class="main-body">
+  <!-- <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+  </mat-form-field> -->
+  <div class="cards-container">
+    <div class="card" *ngFor="let row of dataSource.filteredData">
+      <img [src]="row.ImageUrl" alt="{{row.Nom}}" class="card-img">
+      <div class="card-body">
+        <h3>{{row.Nom}}</h3>
+        <p><strong>Référence:</strong> {{row.Reference}}</p>
+        <p><strong>Catégorie:</strong> {{row.Categorie}}</p>
+        <p><strong>Sous Catégorie:</strong> {{row.SousCategorie}}</p>
+        <p><strong>Marque:</strong> {{row.Marque}}</p>
+        <p><strong>Prix:</strong> {{row.Prix}} €</p>
+        <p><strong>État:</strong> {{row.Etat}}</p>
+        <div class="card-actions">
+          <button mat-icon-button color="primary" (click)="openEditForm(row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteCategorie(row.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="cat-section">
+  <app-cat-resp></app-cat-resp>
+</div>
+<div id="marque-section">
+
+<app-marq-resp></app-marq-resp>
+</div>
+<app-home-responsable></app-home-responsable>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="../../assets/lib/slick/slick.css">
+    <link rel="stylesheet" href="../../assets/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link active">Home</a>
+                        <a routerLink="/" fragment="partenaire-section" class="nav-item nav-link">Nos partenaires</a>
+                        <a routerLink="/" fragment="detail-section" class="nav-item nav-link">Detail</a>
+                        <a routerLink="/" fragment="contact-section" class="nav-item nav-link">Contact</a>
+                  
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <a routerLink="/login" fragment="contact-section" class="nav-item nav-link">Connecter</a>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo d-flex align-items-center">
+                        <a href="index.html" class="d-flex align-items-center">
+                            <img src="../../assets/img/logo.png" alt="Logo" class="logo-img">
+                            <h1 class="m-0 display-5 font-weight-semi-bold ml-3">
+                                <span class="text-orange font-weight-bold mr-1">E</span>asy
+                                <span class="text-orange font-weight-bold mr-1">B</span>uy
+                            </h1>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="search">
+                        <input type="text" placeholder="Search">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+    <!-- Main Slider Start -->
+    <app-categorie-client></app-categorie-client>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row"></div>
+        </div>
+    </div>
+    <!-- Main Slider End -->
+
+    <!-- Brand Start -->
+    <!-- Ajouter un id à la section <app-partenaire> -->
+    <div id="partenaire-section">
+        <app-partenaire></app-partenaire>
+    </div>
+
+    <div id="detail-section">
+    <app-detail></app-detail>
+    </div>
+
+    <div id="contact-section">
+    <app-footer-client></app-footer-client>
+    </div>
+    <!-- Brand End -->
+
+    <!-- Feature Start -->
+   
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/lib/easing/easing.min.js"></script>
+    <script src="../../assets/lib/slick/slick.min.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>

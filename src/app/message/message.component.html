@@ -1,0 +1,13 @@
+<div class="chat-container">
+  <div class="messages" #messagesContainer>
+    <div *ngFor="let message of messages" [ngClass]="{'my-message': message.senderId === userId, 'responsable-message': message.senderId !== userId}">
+      {{ message.content }}
+    </div>
+  </div>
+  <div class="message-input">
+    <form [formGroup]="messageForm" (ngSubmit)="sendMessage()">
+      <input formControlName="content" placeholder="Type your message here...">
+      <button type="submit" [disabled]="!messageForm.valid">Envoyer</button>
+    </form>
+  </div>
+</div>

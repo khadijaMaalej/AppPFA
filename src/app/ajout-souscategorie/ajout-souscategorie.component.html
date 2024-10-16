@@ -1,0 +1,31 @@
+<div mat-dialog-title>
+  <h1>Ajouter une nouvelle sous-catégorie</h1>
+</div>
+<form [formGroup]="sousCategorieForm" (ngSubmit)="ajouterSousCategorie()">
+  <div mat-dialog-content class="content">
+    <div class="row">
+      <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom" formControlName="Nom">
+        <div *ngIf="sousCategorieForm.get('Nom')?.errors && (sousCategorieForm.get('Nom')?.touched || sousCategorieForm.get('Nom')?.dirty)" class="text-danger">
+          Le nom est requis
+        </div>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <input matInput placeholder="Type" formControlName="Type">
+        <div *ngIf="sousCategorieForm.get('Type')?.errors && (sousCategorieForm.get('Type')?.touched || sousCategorieForm.get('Type')?.dirty)" class="text-danger">
+          Le type est requis
+        </div>
+      </mat-form-field>
+      <br>
+    </div>
+    <br>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button type="submit" [disabled]="!sousCategorieForm.valid">Ajouter</button>
+      <button mat-raised-button type="button" (click)="annuler()">Annuler</button>
+    </div>
+  </div>
+</form>

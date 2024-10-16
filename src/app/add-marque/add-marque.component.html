@@ -1,0 +1,41 @@
+<div mat-dialog-title>
+    <h1>Ajouter une Marque</h1>
+  </div>
+  <form [formGroup]="marqueForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content class="content">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom" formControlName="Nom">
+        <div *ngIf="marqueForm.get('Nom')?.errors && (marqueForm.get('Nom')?.touched || marqueForm.get('Nom')?.dirty)" class="text-danger">
+          Le nom est requis
+        </div>
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Catégorie</mat-label>
+        <mat-select formControlName="Categorie">
+          <mat-option *ngFor="let categorie of categories" [value]="categorie.id">{{ categorie.Nom }}</mat-option>
+        </mat-select>
+        <div *ngIf="marqueForm.get('Categorie')?.errors && (marqueForm.get('Categorie')?.touched || marqueForm.get('Categorie')?.dirty)" class="text-danger">
+          La catégorie est requise
+        </div>
+      </mat-form-field>
+      <br>
+  
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Sous-catégorie</mat-label>
+        <mat-select formControlName="SousCategorie">
+          <mat-option *ngFor="let sousCategorie of sousCategories" [value]="sousCategorie.id">{{ sousCategorie.Nom }}</mat-option>
+        </mat-select>
+        <div *ngIf="marqueForm.get('SousCategorie')?.errors && (marqueForm.get('SousCategorie')?.touched || marqueForm.get('SousCategorie')?.dirty)" class="text-danger">
+          La sous-catégorie est requise
+        </div>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!marqueForm.valid">Ajouter</button>
+      <button mat-raised-button type="button" (click)="onCancel()">Annuler</button>
+    </div>
+  </form>
+  

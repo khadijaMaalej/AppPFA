@@ -1,0 +1,451 @@
+{
+  "articles": [
+    {
+      "id": "1721947182693",
+      "Nom": "Galaxy S21",
+      "Reference": "GS21",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones",
+      "Marque": "samsung",
+      "Prix": "850",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947182/pqxokcefdsq2u2h967uq.jpg",
+      "Etat": "Accepté",
+      "Lien": "https://www.monoprix.tn/",
+      "ResponsableId": "86cb",
+      "approved": true
+    },
+    {
+      "id": "1721947289602",
+      "Nom": "Galaxy S21 Ultra",
+      "Reference": "GS21U",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones",
+      "Marque": "samsung",
+      "Prix": "1200",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947289/zapbptzfwwhby6nrgzd0.jpg",
+      "Etat": "Accepté",
+      "Lien": "https://www.monoprix.tn/",
+      "ResponsableId": "86cb",
+      "approved": true
+    },
+    {
+      "id": "1721947409707",
+      "Nom": "iPhone 13",
+      "Reference": "IP13",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones",
+      "Marque": "apple",
+      "Prix": "1000",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947408/wqcdhpdqq83qr6no6u62.png",
+      "Etat": "Accepté",
+      "Lien": "iPhone 13",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1721947496816",
+      "Nom": "Dell XPS 13",
+      "Reference": "XPS13",
+      "Categorie": "electronics",
+      "SousCategorie": "laptops",
+      "Marque": "dell",
+      "Prix": "15000",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947496/vvhv0g2jxr2bjypsuxt2.png",
+      "Etat": "Accepté",
+      "Lien": "https://www.monoprix.tn/",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1721947611092",
+      "Nom": "iPhone 13 Pro",
+      "Reference": "IP13P",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones",
+      "Marque": "apple",
+      "Prix": "1300",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947610/wln6ysrgj5bpowd5fleo.jpg",
+      "Etat": "Accepté",
+      "Lien": "https://aziza.tn/fr/home",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1721947652858",
+      "Nom": "Iphone 13",
+      "Reference": "IP13",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones",
+      "Marque": "apple",
+      "Prix": "200",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947652/epi0utzi3wvuzams7erf.webp",
+      "Etat": "Accepté",
+      "Lien": "https://aziza.tn/fr/home",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1721947759361",
+      "Nom": "Dell XPS",
+      "Reference": "XPS13",
+      "Categorie": "electronics",
+      "SousCategorie": "laptops",
+      "Marque": "dell",
+      "Prix": "6220",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1721947758/hez0khdaojzgrz9m290b.png",
+      "Etat": "Accepté",
+      "Lien": "https://aziza.tn/fr/home",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1722437852358",
+      "Nom": "aertt",
+      "Reference": "366",
+      "Categorie": "df8e",
+      "SousCategorie": "y9zdpww6v",
+      "Marque": "f945",
+      "Prix": "74",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1722437852/nhbodjfxcyenbtutrajt.jpg",
+      "Etat": "Refusé",
+      "Lien": "jjj",
+      "ResponsableId": "230f",
+      "approved": false
+    },
+    {
+      "id": "1722440351392",
+      "Nom": "aaa",
+      "Reference": "zzz",
+      "Categorie": "df8e",
+      "SousCategorie": "y9zdpww6v",
+      "Marque": "f945",
+      "Prix": "885",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1722440351/oyda1ujp7r2b7t1qwyzn.jpg",
+      "Etat": "Accepté",
+      "Lien": "kk;",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1722440352309",
+      "Nom": "aaa",
+      "Reference": "zzz",
+      "Categorie": "df8e",
+      "SousCategorie": "y9zdpww6v",
+      "Marque": "f945",
+      "Prix": "885",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1722440352/bnis3psccorqnjc31gjx.jpg",
+      "Etat": "Refusé",
+      "Lien": "kk;",
+      "ResponsableId": "230f",
+      "approved": false
+    },
+    {
+      "id": "1722440352440",
+      "Nom": "aaa",
+      "Reference": "zzz",
+      "Categorie": "df8e",
+      "SousCategorie": "y9zdpww6v",
+      "Marque": "f945",
+      "Prix": "885",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1722440352/jhecpoovzidzagotiug0.jpg",
+      "Etat": "Refusé",
+      "Lien": "kk;",
+      "ResponsableId": "230f",
+      "approved": false
+    },
+    {
+      "id": "1722461629410",
+      "Nom": "aaaaa",
+      "Reference": "aa",
+      "Categorie": "df8e",
+      "SousCategorie": "y9zdpww6v",
+      "Marque": "f945",
+      "Prix": "852",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1722461630/gkwrpaicofekn2lxnrmq.jpg",
+      "Etat": "Accepté",
+      "Lien": "hjk",
+      "ResponsableId": "230f",
+      "approved": true
+    },
+    {
+      "id": "1722462126244",
+      "Nom": "ujpp",
+      "Reference": "aaa",
+      "Categorie": "cat1",
+      "SousCategorie": "sc1",
+      "Marque": "marqyee",
+      "Prix": "74",
+      "ImageUrl": "https://res.cloudinary.com/dcwqj5lsu/image/upload/v1722462126/p0diypb2ymrathotvu33.jpg",
+      "Etat": "Accepté",
+      "Lien": "jukl",
+      "ResponsableId": "230f",
+      "approved": false
+    }
+  ],
+  "users": [
+    {
+      "id": "3",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "nom": "admin",
+      "prenom": "admin",
+      "status": "approved"
+    },
+    {
+      "id": "230f",
+      "nom": "Maalej",
+      "prenom": "khadija",
+      "email": "maalej.khdija@gmail.com",
+      "password": "khdija123",
+      "numeroCIN": "123456",
+      "magasin": "mg",
+      "status": "approved"
+    },
+    {
+      "id": "86cb",
+      "nom": "zribi",
+      "prenom": "ramzi",
+      "email": "ramzizribi198@gmail.com",
+      "password": "ramzi123",
+      "numeroCIN": "123456",
+      "magasin": "carfour",
+      "status": "approved"
+    },
+    {
+      "id": "39bf",
+      "nom": "khold",
+      "prenom": "khold",
+      "email": "kholdturki@gmail.com",
+      "password": "khold123",
+      "numeroCIN": "88555222",
+      "magasin": "aziza",
+      "status": "approved"
+    }
+  ],
+  "categories": [
+    {
+      "id": "electronics",
+      "Nom": "Électronique",
+      "Slogan": "Tout pour la technologie",
+      "sousCategories": [
+        {
+          "id": "smartphones",
+          "Nom": "Smartphones",
+          "Type": "Téléphones mobiles"
+        },
+        {
+          "id": "laptops",
+          "Nom": "Ordinateurs portables",
+          "Type": "Informatique"
+        }
+      ]
+    },
+    {
+      "id": "home_appliances",
+      "Nom": "Appareils électroménagers",
+      "Slogan": "Pour une maison moderne",
+      "sousCategories": [
+        {
+          "id": "kitchen",
+          "Nom": "Cuisine",
+          "Type": "Électroménagers de cuisine"
+        },
+        {
+          "id": "laundry",
+          "Nom": "Buanderie",
+          "Type": "Électroménagers de buanderie"
+        }
+      ]
+    },
+    {
+      "id": "sports_outdoors",
+      "Nom": "Sports et plein air",
+      "Slogan": "Pour les amoureux de l'aventure",
+      "sousCategories": [
+        {
+          "id": "fitness",
+          "Nom": "Fitness",
+          "Type": "Équipement sportif"
+        },
+        {
+          "id": "camping",
+          "Nom": "Camping",
+          "Type": "Équipement de plein air"
+        }
+      ]
+    },
+    {
+      "id": "df8e",
+      "Nom": "cat1",
+      "Slogan": "pppp",
+      "sousCategories": [
+        {
+          "Nom": "sc1",
+          "Type": "rrr",
+          "id": "y9zdpww6v"
+        }
+      ]
+    }
+  ],
+  "marques": [
+    {
+      "id": "apple",
+      "Nom": "Apple",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones"
+    },
+    {
+      "id": "samsung",
+      "Nom": "Samsung",
+      "Categorie": "electronics",
+      "SousCategorie": "smartphones"
+    },
+    {
+      "id": "dell",
+      "Nom": "Dell",
+      "Categorie": "electronics",
+      "SousCategorie": "laptops"
+    },
+    {
+      "id": "lenovo",
+      "Nom": "Lenovo",
+      "Categorie": "electronics",
+      "SousCategorie": "laptops"
+    },
+    {
+      "id": "whirlpool",
+      "Nom": "Whirlpool",
+      "Categorie": "home_appliances",
+      "SousCategorie": "kitchen"
+    },
+    {
+      "id": "lg",
+      "Nom": "LG",
+      "Categorie": "home_appliances",
+      "SousCategorie": "laundry"
+    },
+    {
+      "id": "nike",
+      "Nom": "Nike",
+      "Categorie": "fashion",
+      "SousCategorie": "mens_clothing"
+    },
+    {
+      "id": "adidas",
+      "Nom": "Adidas",
+      "Categorie": "fashion",
+      "SousCategorie": "mens_clothing"
+    },
+    {
+      "id": "reebok",
+      "Nom": "Reebok",
+      "Categorie": "sports_outdoors",
+      "SousCategorie": "fitness"
+    },
+    {
+      "id": "coleman",
+      "Nom": "Coleman",
+      "Categorie": "sports_outdoors",
+      "SousCategorie": "camping"
+    },
+    {
+      "id": "f945",
+      "Nom": "marqyee",
+      "Categorie": "df8e",
+      "SousCategorie": "y9zdpww6v"
+    }
+  ],
+  "conversations": [
+    {
+      "id": "3-230f",
+      "participants": [
+        "3",
+        "230f"
+      ],
+      "responsableName": "Maalej khadija"
+    },
+    {
+      "id": "3-86cb",
+      "participants": [
+        "3",
+        "86cb"
+      ],
+      "responsableName": "zribi ramzi"
+    },
+    {
+      "id": "3-39bf",
+      "participants": [
+        "3",
+        "39bf"
+      ],
+      "responsableName": "khold khold"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1722214706608",
+      "conversationId": "3-86cb",
+      "senderId": "86cb",
+      "receiverId": "3",
+      "content": "bonjour",
+      "timestamp": "2024-07-29T00:58:26.608Z"
+    },
+    {
+      "id": "1722214725522",
+      "conversationId": "3-230f",
+      "senderId": "230f",
+      "receiverId": "3",
+      "content": "hello",
+      "timestamp": "2024-07-29T00:58:45.522Z"
+    },
+    {
+      "id": "1722463991255",
+      "conversationId": "3-86cb",
+      "senderId": "3",
+      "receiverId": "86cb",
+      "content": "bonjour",
+      "timestamp": "2024-07-31T22:13:11.255Z"
+    },
+    {
+      "id": "1722464000416",
+      "conversationId": "3-230f",
+      "senderId": "3",
+      "receiverId": "230f",
+      "content": "hi",
+      "timestamp": "2024-07-31T22:13:20.416Z"
+    },
+    {
+      "id": "1724064073533",
+      "conversationId": "3-230f",
+      "senderId": "230f",
+      "receiverId": "3",
+      "content": "bonjour admin",
+      "timestamp": "2024-08-19T10:41:13.533Z"
+    },
+    {
+      "id": "1724070122992",
+      "conversationId": "3-86cb",
+      "senderId": "86cb",
+      "receiverId": "3",
+      "content": "hi",
+      "timestamp": "2024-08-19T12:22:02.992Z"
+    },
+    {
+      "id": "1729010743402",
+      "conversationId": "3-39bf",
+      "senderId": "39bf",
+      "receiverId": "3",
+      "content": "ena khold",
+      "timestamp": "2024-10-15T16:45:43.402Z"
+    },
+    {
+      "id": "1729010765638",
+      "conversationId": "3-39bf",
+      "senderId": "3",
+      "receiverId": "39bf",
+      "content": "ahla",
+      "timestamp": "2024-10-15T16:46:05.638Z"
+    }
+  ]
+}

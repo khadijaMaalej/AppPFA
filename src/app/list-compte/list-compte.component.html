@@ -1,0 +1,40 @@
+<div class="wrapper">
+
+    <app-navbar></app-navbar>
+
+
+<div class="content-wrapper">
+    <div class="main-body">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Liste des utilisateurs</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <mat-label>Rechercher</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John" #input>
+          </mat-form-field>
+          <div class="grid-container">
+            <ng-container *ngFor="let user of dataSource.filteredData">
+              <mat-card class="user-card">
+                <mat-card-header>
+                  <mat-card-title>{{ user.nom }} {{ user.prenom }}</mat-card-title>
+                  <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                  <p><strong>Numéro CIN:</strong> {{ user.numeroCIN }}</p>
+                  <p><strong>Magasin:</strong> {{ user.magasin }}</p>
+                  <p><strong>Status:</strong> {{ user.status }}</p>
+                </mat-card-content>
+                
+              </mat-card>
+            </ng-container>
+          </div>
+        </mat-card-content>
+       
+      </mat-card>
+    </div>
+  </div>
+  
+</div>
+<app-footer></app-footer>

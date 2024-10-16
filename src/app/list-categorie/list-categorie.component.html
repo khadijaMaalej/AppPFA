@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/assets/dist/css/adminlte.min.css">
+
+<div class="wrapper">
+  <app-navbar></app-navbar>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button mat-raised-button color="primary" class="float-right" (click)="openAddEditCategorieForm()">
+            Ajouter une catégorie
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="main-body">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+        </mat-form-field>
+        <div class="table-container">
+          <table mat-table [dataSource]="dataSource" matSort>
+            <!-- Nom Column -->
+            <ng-container matColumnDef="Nom">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
+              <td mat-cell *matCellDef="let row"> {{row.Nom}} </td>
+            </ng-container>
+            <!-- Description Column -->
+            <ng-container matColumnDef="Slogan">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+              <td mat-cell *matCellDef="let row"> {{row.Slogan}} </td>
+            </ng-container>
+            <!-- Action Column -->
+            <ng-container matColumnDef="Action">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+              <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="primary" (click)="openEditForm(row)">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteCategorie(row.id)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+                <button mat-icon-button color="accent" (click)="openSousCatList(row.id)">
+                  <mat-icon>list</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  

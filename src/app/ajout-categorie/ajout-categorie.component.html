@@ -1,0 +1,27 @@
+<div mat-dialog-title>
+    <h1>Creation Catégorie</h1>
+    
+    </div>
+    <form [formGroup]="categorieForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        
+        <div class="row">
+    
+    <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder="Nom" formControlName="Nom">
+    </mat-form-field>
+    <br>
+   
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <input matInput placeholder="Description" formControlName="Slogan">
+      </mat-form-field>
+      <br>
+        </div>
+      <div mat-dialog-actions class="action">
+          <button mat-raised-button color="primary" type="submit">{{ data ? 'modifier' : 'sauvegarder' }}</button>
+          <button mat-raised-button type="button" [mat-dialog-close]="false">Annuler</button>
+        </div>
+    </div>
+    </form>
